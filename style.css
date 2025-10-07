@@ -1,21 +1,38 @@
-body, html {
-    height: 100%;
-    color: white;
+a {
+    color: lightskyblue;
 }
 
 body {
-    background-image: url(images/bg1.avif);
+    /*background-image: url(images/bg1.avif);*/
+    background-color: black;
     min-height: 100%;
     background-position: center center;
     background-size: cover;
+    font-family: "Canterbury", "Georgia", Times, serif;
+    color: white;
+}
+
+table, td {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+ul {
+    list-style-type: "- ";
 }
 
 .beer_entry {
     text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.beer_header {
+.beer_title {
+    font-style: italic;
+}
+
+.ul_header {
+    text-decoration: underline;
+}
+
+.title {
     text-align: center;
-    font-size: xx-large;
 }
