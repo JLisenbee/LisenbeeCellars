@@ -1,3 +1,15 @@
+body, html {
+    height: 100%;
+    color: white;
+}
+
+body {
+    background-image: url(images/bg1.avif);
+    min-height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
 .beer_entry {
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -5,5 +17,5 @@
 
 .beer_header {
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
 }
