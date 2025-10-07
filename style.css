@@ -17,6 +17,10 @@ table, td {
     border: 1px solid;
 }
 
+table {
+    margin-left: 1%;
+}
+
 ul {
     list-style-type: "- ";
 }
