@@ -21,6 +21,10 @@ table {
     margin-left: 1%;
 }
 
+td {
+    padding: 3px;
+}
+
 ul {
     list-style-type: "- ";
 }
