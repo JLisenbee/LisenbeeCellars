@@ -1,7 +1,7 @@
 import qrcode
 from PIL import Image, ImageFont, ImageDraw
 
-def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, guest_recipe: bool = False, url: str = None):
+def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, guest_recipe: bool = False, brew_date: str = "", url: str = None):
     HEIGHT = 400
     WIDTH = int(HEIGHT * 0.825)
     BLACK= (0, 0, 0)
@@ -32,6 +32,7 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
     d.text((WIDTH * 0.5, HEIGHT * 0.20), name, fill=BLACK, anchor="mm", align="center", font=tfont)
     d.text((WIDTH * 0.5, HEIGHT * 0.27), style, fill=BLACK, anchor="mm", align="center", font=ifont)
     d.text((WIDTH * 0.5, HEIGHT * 0.34), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.92), f"Brewed On: {brew_date}", fill=BLACK, anchor="mm", align="center", font=gfont)
     if guest_recipe:
         d.text((WIDTH * 0.5, HEIGHT * 0.97), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
 
@@ -45,7 +46,8 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
 make_label("mild.png", 
            "Mildly Interesting",
            "English Dark Mild",
-           3.7,
+           3.8,
            16,
            True,
+           "11/08/2025",
            "https://jlisenbee.github.io/LisenbeeCellars/#MildlyInteresting")
