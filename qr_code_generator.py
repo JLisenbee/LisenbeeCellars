@@ -48,6 +48,6 @@ make_label("mild.png",
            "English Dark Mild",
            3.8,
            16,
-           True,
+           False,
            "11/08/2025",
            "https://jlisenbee.github.io/LisenbeeCellars/#MildlyInteresting")
