@@ -1,7 +1,7 @@
 import qrcode
 from PIL import Image, ImageFont, ImageDraw
 
-def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, guest_recipe: bool = False, brew_date: str = "", url: str = None):
+def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, guest_recipe: bool = False, brew_date: str = "", flavor_text: str = None, url: str = None):
     HEIGHT = 400
     WIDTH = int(HEIGHT * 0.825)
     BLACK= (0, 0, 0)
@@ -32,22 +32,20 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
     d.text((WIDTH * 0.5, HEIGHT * 0.20), name, fill=BLACK, anchor="mm", align="center", font=tfont)
     d.text((WIDTH * 0.5, HEIGHT * 0.27), style, fill=BLACK, anchor="mm", align="center", font=ifont)
     d.text((WIDTH * 0.5, HEIGHT * 0.34), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.92), f"Brewed On: {brew_date}", fill=BLACK, anchor="mm", align="center", font=gfont)
     if guest_recipe:
-        d.text((WIDTH * 0.5, HEIGHT * 0.97), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
+        d.text((WIDTH * 0.5, HEIGHT * 0.42), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
+    elif flavor_text:
+        d.multiline_text((WIDTH * 0.5, HEIGHT * 0.42), flavor_text, fill=BLACK, anchor="mm", align="center", font=gfont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.97), f"Brewed On: {brew_date}", fill=BLACK, anchor="mm", align="center", font=gfont)
 
     # Write Label
     if url:
-        d.text((WIDTH * 0.5, HEIGHT * 0.45), "Scan below to see recipe and more!", fill=BLACK, anchor="mm", align="center", font=gfont)
+        d.text((WIDTH * 0.5, HEIGHT * 0.92), "Scan above to see the recipe for this beer and more!", fill=BLACK, anchor="mm", align="center", font=gfont)
         lbl.paste(qr, (int((WIDTH / 2.0) - 75), int(HEIGHT * 0.5)))
 
     lbl.save(output_file)
 
-make_label("mild.png", 
-           "Mildly Interesting",
-           "English Dark Mild",
-           3.8,
-           16,
-           False,
-           "11/08/2025",
-           "https://jlisenbee.github.io/LisenbeeCellars/#MildlyInteresting")
+make_label(output_file="mild.png", name="Mildly Interesting", style="English Dark Mild", 
+           abv=3.8, ibu=16, guest_recipe=False, brew_date="11/08/2025",
+           flavor_text="A refined 'Session' rather than a common 'Crusher'\nBut I'm not your dad, do what you want.",
+           url="https://jlisenbee.github.io/LisenbeeCellars/#MildlyInteresting")
