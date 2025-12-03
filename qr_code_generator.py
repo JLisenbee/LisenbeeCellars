@@ -29,7 +29,7 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
     lfont = ImageFont.truetype("./AUGUSTUS.TTF", size=36)
     d = ImageDraw.Draw(lbl)
     d.text((WIDTH * 0.5, HEIGHT * 0.07), "BASEMENT BEER", fill=BLACK, anchor="mm", align="center", font=lfont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.20), name, fill=BLACK, anchor="mm", align="center", font=tfont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.18), name, fill=BLACK, anchor="mm", align="center", font=tfont)
     d.text((WIDTH * 0.5, HEIGHT * 0.27), style, fill=BLACK, anchor="mm", align="center", font=ifont)
     d.text((WIDTH * 0.5, HEIGHT * 0.34), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
     if guest_recipe:
