@@ -1,11 +1,11 @@
 import qrcode
-from PIL import Image, ImageFont, ImageDraw
+from PIL import Image, ImageFont, ImageDraw, ImageOps
 
 def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, guest_recipe: bool = False, brew_date: str = "", flavor_text: str = None, url: str = None):
     HEIGHT = 400
     WIDTH = int(HEIGHT * 0.825)
     BLACK= (0, 0, 0)
-    LOGO_COLOR = (92, 75, 63)
+    LOGO_COLOR = (75, 75, 75)
 
     # Make QR Code an save
     if url:
@@ -23,19 +23,19 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
         qr = qr.resize((150, 150), Image.Resampling.NEAREST)
 
     # Write Text
-    tfont = ImageFont.truetype("./georgia.ttf", size=26)
+    tfont = ImageFont.truetype("./georgia.ttf", size=36)
     ifont = ImageFont.truetype("./georgiai.ttf", size=18)
     gfont = ImageFont.truetype("./georgiai.ttf", size=12)
     lfont = ImageFont.truetype("./AUGUSTUS.TTF", size=36)
     d = ImageDraw.Draw(lbl)
-    d.text((WIDTH * 0.5, HEIGHT * 0.07), "BASEMENT BEER", fill=BLACK, anchor="mm", align="center", font=lfont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.18), name, fill=BLACK, anchor="mm", align="center", font=tfont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.27), style, fill=BLACK, anchor="mm", align="center", font=ifont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.34), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.07), "BASEMENT BEER", fill=LOGO_COLOR, anchor="mm", align="center", font=lfont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.20), name, fill=BLACK, anchor="mm", align="center", font=tfont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.32), style, fill=BLACK, anchor="mm", align="center", font=ifont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.37), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
     if guest_recipe:
-        d.text((WIDTH * 0.5, HEIGHT * 0.42), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
+        d.text((WIDTH * 0.5, HEIGHT * 0.45), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
     elif flavor_text:
-        d.multiline_text((WIDTH * 0.5, HEIGHT * 0.42), flavor_text, fill=BLACK, anchor="mm", align="center", font=gfont)
+        d.multiline_text((WIDTH * 0.5, HEIGHT * 0.45), flavor_text, fill=BLACK, anchor="mm", align="center", font=gfont)
     d.text((WIDTH * 0.5, HEIGHT * 0.97), f"Brewed On: {brew_date}", fill=BLACK, anchor="mm", align="center", font=gfont)
 
     # Write Label
