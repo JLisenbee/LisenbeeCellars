@@ -45,7 +45,7 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
 
     lbl.save(output_file)
 
-make_label(output_file="mild.png", name="Mildly Interesting", style="English Dark Mild", 
-           abv=3.8, ibu=16, guest_recipe=False, brew_date="11/08/2025",
-           flavor_text="A refined 'Session' rather than a common 'Crusher'\nBut I'm not your dad, do what you want.",
-           url="https://jlisenbee.github.io/LisenbeeCellars/#MildlyInteresting")
+make_label(output_file="amber.png", name="Whispering Woods", style="Amber Ale", 
+           abv=6.0, ibu=34, guest_recipe=False, brew_date="01/17/2026",
+           flavor_text="Dry, sleepy, branches creak in the breeze.\nThe woods answer the call to steady revival.",
+           url="https://jlisenbee.github.io/LisenbeeCellars/#WhisperingWoods")
