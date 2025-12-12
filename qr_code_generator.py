@@ -28,20 +28,22 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
     gfont = ImageFont.truetype("./georgiai.ttf", size=12)
     lfont = ImageFont.truetype("./AUGUSTUS.TTF", size=36)
     d = ImageDraw.Draw(lbl)
-    d.text((WIDTH * 0.5, HEIGHT * 0.07), "BASEMENT BEER", fill=LOGO_COLOR, anchor="mm", align="center", font=lfont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.20), name, fill=BLACK, anchor="mm", align="center", font=tfont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.32), style, fill=BLACK, anchor="mm", align="center", font=ifont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.37), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.07), name, fill=BLACK, anchor="mm", align="center", font=tfont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.18), style, fill=BLACK, anchor="mm", align="center", font=ifont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.23), f"{abv}% ABV, {ibu} IBU", fill=BLACK, anchor="mm", align="center", font=ifont)
     if guest_recipe:
-        d.text((WIDTH * 0.5, HEIGHT * 0.45), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
+        d.text((WIDTH * 0.5, HEIGHT * 0.31), "Note: The recipe for this beer was designed by someone else", fill=BLACK, anchor="mm", align="center", font=gfont)
     elif flavor_text:
-        d.multiline_text((WIDTH * 0.5, HEIGHT * 0.45), flavor_text, fill=BLACK, anchor="mm", align="center", font=gfont)
-    d.text((WIDTH * 0.5, HEIGHT * 0.97), f"Brewed On: {brew_date}", fill=BLACK, anchor="mm", align="center", font=gfont)
+        d.multiline_text((WIDTH * 0.5, HEIGHT * 0.31), flavor_text, fill=BLACK, anchor="mm", align="center", font=gfont)
 
     # Write Label
     if url:
-        d.text((WIDTH * 0.5, HEIGHT * 0.92), "Scan above to see the recipe for this beer and more!", fill=BLACK, anchor="mm", align="center", font=gfont)
-        lbl.paste(qr, (int((WIDTH / 2.0) - 75), int(HEIGHT * 0.5)))
+        d.text((WIDTH * 0.5, HEIGHT * 0.80), "Scan above to see the recipe for this beer and more!", fill=BLACK, anchor="mm", align="center", font=gfont)
+        lbl.paste(qr, (int((WIDTH / 2.0) - 75), int(HEIGHT * 0.38)))
+    
+    d.text((WIDTH * 0.5, HEIGHT * 0.84), f"Brewed On: {brew_date}", fill=BLACK, anchor="mm", align="center", font=gfont)
+    d.text((WIDTH * 0.5, HEIGHT * 0.95), "BASEMENT BEER", fill=LOGO_COLOR, anchor="mm", align="center", font=lfont)
+
 
     lbl.save(output_file)
 
