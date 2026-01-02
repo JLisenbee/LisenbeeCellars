@@ -48,6 +48,6 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
     lbl.save(output_file)
 
 make_label(output_file="amber.png", name="Whispering Woods", style="Amber Ale", 
-           abv=6.0, ibu=34, guest_recipe=False, brew_date="01/17/2026",
+           abv=5.8, ibu=35, guest_recipe=False, brew_date="01/17/2026",
            flavor_text="Through the endless cycle of the seasons\nthe trees always remain to remember.",
            url="https://jlisenbee.github.io/LisenbeeCellars/#WhisperingWoods")
