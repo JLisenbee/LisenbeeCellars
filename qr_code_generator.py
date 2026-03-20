@@ -47,7 +47,7 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
 
     lbl.save(output_file)
 
-make_label(output_file="amber.png", name="Whispering Woods", style="Amber Ale", 
-           abv=5.8, ibu=36, guest_recipe=False, brew_date="01/17/2026",
-           flavor_text="Through the endless cycle of seasons\nthe trees always remain to remember.",
-           url="https://jlisenbee.github.io/LisenbeeCellars/#WhisperingWoods")
+make_label(output_file="goldnugget.png", name="Gold Nugget", style="(Mostly) Pale Ale", 
+           abv=5.5, ibu=46, guest_recipe=False, brew_date="02/21/2026",
+           flavor_text="In many cases, simple is just better.\n(A \"SMaSH\" brew of Munich Malt and Nugget Hops)",
+           url="https://jlisenbee.github.io/LisenbeeCellars/#GoldNugget")
