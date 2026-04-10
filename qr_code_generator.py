@@ -45,9 +45,14 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
     d.text((WIDTH * 0.5, HEIGHT * 0.95), "BASEMENT BEER", fill=LOGO_COLOR, anchor="mm", align="center", font=lfont)
 
 
-    lbl.save(output_file)
+    lbl.save("labels/" + output_file)
 
-make_label(output_file="goldnugget.png", name="Gold Nugget", style="(Mostly) Pale Ale", 
-           abv=5.5, ibu=46, guest_recipe=False, brew_date="02/21/2026",
-           flavor_text="In many cases, simple is just better.\n(A \"SMaSH\" brew of Munich Malt and Nugget Hops)",
-           url="https://jlisenbee.github.io/LisenbeeCellars/#GoldNugget")
+make_label(output_file="elderstone.png",
+            name="Elderstone Porter",
+            style="American Porter", 
+            abv=6.0,
+            ibu=36,
+            guest_recipe=False,
+            brew_date="04/11/2026",
+            flavor_text="Brewers need to age and mature sometimes too.",
+            url="https://jlisenbee.github.io/LisenbeeCellars/#ElderstonePorter")
