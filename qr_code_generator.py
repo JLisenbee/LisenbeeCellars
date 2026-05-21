@@ -50,7 +50,7 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
 make_label(output_file="elderstone.png",
             name="Elderstone Porter",
             style="American Porter", 
-            abv=6.0,
+            abv=6.2,
             ibu=36,
             guest_recipe=False,
             brew_date="04/11/2026",
