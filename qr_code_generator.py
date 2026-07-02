@@ -47,12 +47,12 @@ def make_label(output_file: str, name: str, style: str, abv: float, ibu: int, gu
 
     lbl.save("labels/" + output_file)
 
-make_label(output_file="elderstone.png",
-            name="Elderstone Porter",
-            style="American Porter", 
-            abv=6.2,
-            ibu=36,
+make_label(output_file="graybeard_2026.png",
+            name="Greybeard's Choice",
+            style="IPA", 
+            abv=5.8,
+            ibu=46,
             guest_recipe=False,
-            brew_date="04/11/2026",
-            flavor_text="Sometimes brewers need time to mature\n just as their beers do.",
+            brew_date="05/23/2026",
+            flavor_text="Beloved of Elder Lisenbee\nBrewed Annually for Father's Day",
             url="https://jlisenbee.github.io/LisenbeeCellars/#GraybeardsChoice")
