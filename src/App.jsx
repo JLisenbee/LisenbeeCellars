@@ -45,18 +45,16 @@ export default function App() {
   }
 
   return (
-    <Container sx={{ py: 4, fontFamily: '"Georgia", "Times New Roman", serif',}}>
+    <Container sx={{ py: 4, fontFamily: '"Georgia", "Times New Roman", serif'}}>
       <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
         Basement Beer
       </Typography>
       
-      <Grid container={true} spacing={1}>
-        {recipes.map((recipe) => (
-          <Grid item={true} size={{ xs: 12, sm: 6 }} key={recipe.id}>
-            <RecipeCard recipe={recipe}/>
-          </Grid>
-        ))}
-      </Grid>
+      {recipes.map((recipe) => (
+        <Grid size={{ xs: 4, align: "center" }} key={recipe.id}>
+          <RecipeCard recipe={recipe}/>
+        </Grid>
+      ))}
     </Container>
   );
 }
