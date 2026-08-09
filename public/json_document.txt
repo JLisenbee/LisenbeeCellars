@@ -1,0 +1,51 @@
+Documentation For JSON Formats
+
+### recipes.json ###
+# Defines style, style scope, and some short description/flavor text
+id: <str>,		        # Unique id for the beer, for referencing between recipes and brews in a one-to-many
+name: <str>,		    # Human-Readable name of the beer
+style: <str>,		    # Style (not necessary BJCP compliant)
+guest_recipe: <bool>,	# Whether or not I designed this recipe
+flavor_text: <str>,	    # Flavor text for labels
+
+### brews.json ###
+# Defines target and actual values for various values (abv, ibu, og, fg) and a short explanation of any changes and/or notes on the brew itself 
+id: <str>,		         # Unique id for the beer, for referencing between recipes and brews in a one-to-many
+brew_date: <str>,	     # Date of brewing
+abv_target: <float>,	 # Intended ABV
+abv_actual: <float>,	 # Actual ABV
+ibu_target: <float>,     # Intended IBU
+ibu_actual: <float>,     # Actual IBU
+og_target: <float>,      # Intended Original Gravity
+og_actual: <float>,      # Actual Original Gravity
+fg_target: <float>,      # Intended Final Gravity
+fg_actual: <float>,      # Actual Final Gravity
+recipe: {                # Ingredients that went into the brew
+    "grains": [
+        [<str>, <float>],   # String is name of grain, float is percentage of total grain bill
+        ...
+    ],
+    "hops": 
+        [
+            {
+                "hop_name": <str>,  # Name of the hop used
+                "time": <float>,    # How many mins left in the boil when this hop was added
+                "amount": <str>     # Either an IBU contribution, or a grams/gallon definition
+            },
+            ... (list of hops) ...
+        ]
+    "yeast": <str>       # String is name of yeast
+    "mash_temp": <float> # Mash Temperature
+}
+
+
+Ignorant of the Last Day
+German Immigrant
+Elderstone Porter
+Gold Nugget
+Whispering Woods
+Mildly Interesting
+Last Embers
+Graybeard's Choice
+Understone Porter
+

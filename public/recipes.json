@@ -1,0 +1,23 @@
+[
+  {
+    "id": "test-brew",		        
+    "name": "Test Brew",		       
+    "style": "IPA",		   
+    "guest_recipe": false,
+    "flavor_text": "A Tester beer for messing with the new site"
+  },
+  {
+    "id": "test-brew2",		        
+    "name": "Test Brew 2",		       
+    "style": "Porter",		   
+    "guest_recipe": false,
+    "flavor_text": "A Tester beer for messing with the new site (the second one)"
+  },
+  {
+    "id": "test-brew3",		        
+    "name": "Test Brew 3",		       
+    "style": "Light Lager",		   
+    "guest_recipe": false,
+    "flavor_text": "A Tester beer for messing with the new site (the Third one)"
+  }
+]
