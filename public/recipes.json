@@ -1,8 +1,8 @@
 [
   {
-    "id": "test-brew",		        
-    "name": "Test Brew",		       
-    "style": "IPA",		   
+    "id": "understone_porter",		        
+    "name": "Understone Porter",		       
+    "style": "American Porter",		   
     "guest_recipe": false,
     "flavor_text": "A Tester beer for messing with the new site",
     "brews":[

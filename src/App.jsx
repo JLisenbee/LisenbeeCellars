@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Grid, Typography, CircularProgress, Box } from '@mui/material';
+import { Container, Grid, Typography, CircularProgress, Box, } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import RecipeCard from './RecipeCard';
+import '@fontsource-variable/roboto-serif/wght.css';
 
 export default function App() {
   const [recipes, setRecipes] = useState([]);
@@ -44,17 +46,48 @@ export default function App() {
     );
   }
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: '"Roboto Serif Variable", serif',
+    },
+    palette: {
+      mode: 'dark',
+      primary: {
+        main: '#4A5568',      // Mineral Slate
+        light: '#718096',
+        dark: '#2D3748',
+        contrastText: '#FFFFFF',
+      },
+      secondary: {
+        main: '#D69E2E',      // Roasted Amber / Malt
+        light: '#ECC94B',
+        dark: '#B7791F',
+        contrastText: '#000000',
+      },
+      background: {
+        default: '#1A202C',   // Deep Basalt Grey
+        paper: '#2D3748',     // Cellar Wall Grey
+      },
+      text: {
+        primary: '#EDF2F7',
+        secondary: '#A0AEC0',
+      },
+    },
+  });
+
   return (
-    <Container sx={{ py: 4, fontFamily: '"Georgia", "Times New Roman", serif'}}>
-      <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
-        Basement Beer
-      </Typography>
-      
-      {recipes.map((recipe) => (
-        <Grid size={{ xs: 4, align: "center" }} key={recipe.id}>
-          <RecipeCard recipe={recipe}/>
-        </Grid>
-      ))}
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
+          Basement Beer
+        </Typography>
+        
+        {recipes.map((recipe) => (
+          <Grid size={{ xs: 4, align: "center" }} key={recipe.id}>
+            <RecipeCard recipe={recipe}/>
+          </Grid>
+        ))}
+      </Container>
+    </ThemeProvider>
   );
 }
