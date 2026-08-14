@@ -1,42 +1,253 @@
 [
   {
-    "id": "understone_porter",		        
-    "name": "Understone Porter",		       
-    "style": "American Porter",		   
+    "id": "whispering_woods",		        
+    "name": "Whispering Woods",		       
+    "style": "American Amber Ale",		   
     "guest_recipe": false,
-    "flavor_text": "A Tester beer for messing with the new site",
+    "flavor_text": "Through the endless cycle of seasons, the trees always remain to remember.",
     "brews":[
       {
-        "brew_date": "05/23/2026",
-        "abv_target": 5.2,
-        "abv_actual": 4.9,
-        "ibu_target": 30.0, 
-        "ibu_actual": 32.0, 
-        "og_target": 1.050,
-        "og_actual": 1.042,
-        "fg_target": 1.008,
-        "fg_actual": 1.007,
+        "brew_date": "01/17/2026",
+        "abv_target": 5.5,
+        "abv_actual": 5.8,
+        "ibu_target": 36, 
+        "ibu_actual": 36, 
+        "og_target": 1.053,
+        "og_actual": 1.055,
+        "fg_target": 1.011,
+        "fg_actual": 1.011,
         "recipe": 
           {
             "grains": 
               [
-                ["Bear Branch Pale", 100.0]
+                ["Crisp Finest Maris Otter", 69.2],
+                ["Munich 7.6L", 15.4],
+                ["Caramel 40L", 7.7],
+                ["Caramel 60L", 3.9],
+                ["Crisp Amber Malt", 3.9]
+              ],
+            "hops": 
+              [
+                {
+                  "hop_name": "Magnum",
+                  "time": 60,
+                  "amount": "27 IBU"
+                },
+                {
+                  "hop_name": "Centennial",
+                  "time": 15,
+                  "amount": "9 IBU"
+                },
+                {
+                  "hop_name": "Willamette",
+                  "time": 0,
+                  "amount": "5.33g / gal"
+                }
+              ],
+            "yeast": "SafeAle US-05",
+            "mash_temp": 152.0
+          }
+      }]
+  },
+  {
+    "id": "mildly_interesting",		        
+    "name": "Mildly Interesting",		       
+    "style": "British Dark Mild",		   
+    "guest_recipe": false,
+    "flavor_text": "A Refined 'Session' Rather than a common 'Crusher'. But we're not your dad, do what you want.",
+    "brews":[
+      {
+        "brew_date": "11/8/2025",
+        "abv_target": 3.7,
+        "abv_actual": 3.8,
+        "ibu_target": 16, 
+        "ibu_actual": 16, 
+        "og_target": 1.038,
+        "og_actual": 1.040,
+        "fg_target": 1.010,
+        "fg_actual": 1.011,
+        "recipe": 
+          {
+            "grains": 
+              [
+                ["Crisp Finest Maris Otter", 77.8],
+                ["Dingemans Biscuit Malt", 5.6],
+                ["Carafa Special I", 5.6],
+                ["Weyermann Chocolate Rye", 5.6],
+                ["Crisp Rye Malt", 5.6]
               ],
             "hops": 
               [
                 {
                   "hop_name": "Magnum",
                   "time": 60.0,
-                  "amount": "30 IBU"
-                },
-                {
-                  "hop_name": "Willamette",
-                  "time": 0.0,
-                  "amount": "5g/gal"
+                  "amount": "16 IBU"
                 }
               ],
-            "yeast": "US-05",
-            "mash_temp": 152.0
+            "yeast": "SafeAle S-04",
+            "mash_temp": 154.0
+          }
+      }]
+  },
+  {
+    "id": "greybeards_choice",		        
+    "name": "Greybeards Choice",		       
+    "style": "IPA",		   
+    "guest_recipe": false,
+    "flavor_text": "An Annual Request of Elder Lisenbee, and his most favored brew from the Lisenbee Basement.",
+    "brews":[
+      {
+        "brew_date": "5/23/2026",
+        "abv_target": 6.8,
+        "abv_actual": 5.8,
+        "ibu_target": 46, 
+        "ibu_actual": 46, 
+        "og_target": 1.066,
+        "og_actual": 1.050,
+        "fg_target": 1.014,
+        "fg_actual": 1.006,
+        "recipe": 
+          {
+            "grains": 
+              [
+                ["Bear Branch Pale", 73.3],
+                ["Flaked Oats", 13.3],
+                ["Avangard Wheat Malt", 13.3]
+              ],
+            "hops": 
+              [
+                {
+                  "hop_name": "Magnum",
+                  "time": 60.0,
+                  "amount": "12 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 60.0,
+                  "amount": "12 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 30.0,
+                  "amount": "12 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 15.0,
+                  "amount": "10 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 0.0,
+                  "amount": "5g/gal"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": "Dry Hop On Day 4",
+                  "amount": "14g/gal"
+                }
+              ],
+            "yeast": "SafeAle US-05",
+            "mash_temp": 154.0
+          }
+      },
+      {
+        "brew_date": "5/18/2025",
+        "abv_target": 6.7,
+        "abv_actual": 6.0,
+        "ibu_target": 49, 
+        "ibu_actual": 49, 
+        "og_target": 1.063,
+        "og_actual": 1.059,
+        "fg_target": 1.012,
+        "fg_actual": 1.013,
+        "recipe": 
+          {
+            "grains": 
+              [
+                ["Briess 2-Row", 80.0],
+                ["Flaked Oats", 10.0],
+                ["Avangard Wheat Malt", 10.0]
+              ],
+            "hops": 
+              [
+                {
+                  "hop_name": "Magnum",
+                  "time": 60.0,
+                  "amount": "8 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 60.0,
+                  "amount": "14 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 30.0,
+                  "amount": "15 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 15.0,
+                  "amount": "12 IBU"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": 0.0,
+                  "amount": "5g/gal"
+                },
+                {
+                  "hop_name": "Citra",
+                  "time": "Dry Hop On Day 4",
+                  "amount": "14g/gal"
+                }
+              ],
+            "yeast": "SafeAle US-05",
+            "mash_temp": 150.0
+          }
+      }
+    ]
+  },
+  {
+    "id": "understone_porter",		        
+    "name": "Understone Porter",		       
+    "style": "American Porter",		   
+    "guest_recipe": false,
+    "flavor_text": "Baby Steps...",
+    "brews":[
+      {
+        "brew_date": "4/5/2025",
+        "abv_target": 6.6,
+        "abv_actual": 5.3,
+        "ibu_target": 31, 
+        "ibu_actual": 31, 
+        "og_target": 1.064,
+        "og_actual": 1.064,
+        "fg_target": 1.014,
+        "fg_actual": 1.024,
+        "recipe": 
+          {
+            "grains": 
+              [
+                ["Briess 2-Row", 80.0],
+                ["Crisp Chocolate Malt", 10.0],
+                ["Flaked Oats", 10.0]
+              ],
+            "hops": 
+              [
+                {
+                  "hop_name": "Magnum",
+                  "time": 60.0,
+                  "amount": "28 IBU"
+                },
+                {
+                  "hop_name": "Fuggle",
+                  "time": 15.0,
+                  "amount": "3 IBU"
+                }
+              ],
+            "yeast": "SafeAle S-04",
+            "mash_temp": 154.0
           }
       }]
   }

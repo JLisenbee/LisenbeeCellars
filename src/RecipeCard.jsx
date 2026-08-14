@@ -18,7 +18,7 @@ export default function RecipeCard({ recipe }) {
         </Typography>
         
         <Box>
-          <Typography variant="caption" fontWeight="medium">
+          <Typography dense variant="caption" fontWeight="medium">
             {recipe.flavor_text}
           </Typography>
         </Box>
@@ -31,9 +31,13 @@ export default function RecipeCard({ recipe }) {
           Brews of this Beer:
         </Typography>
 
+        <Grid container spacing={1}>
         {recipe.brews.map((brew) => (
-          <BrewLink key={brew.brew_date} brew={brew} beer_name={recipe.name} />
+          <Grid item size={{ align: "center"}}>
+            <BrewLink key={brew.brew_date} brew={brew} beer_name={recipe.name} sx={{padding: 2}}/>
+          </Grid>
         ))}
+        </Grid>
 
       </CardContent>
     </Card>
@@ -49,7 +53,7 @@ export function BrewLink({ brew, beer_name }) {
   return (
     <Box display="inline-block" m={1}>
       <Button 
-        sx={{ align: "center" }} 
+        sx={{ align: "center"}} 
         variant="contained" 
         onClick={handleOpen}
       >

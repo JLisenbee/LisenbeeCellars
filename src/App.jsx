@@ -82,11 +82,13 @@ export default function App() {
           Basement Beer
         </Typography>
         
+        <Grid container spacing={2}>
         {recipes.map((recipe) => (
-          <Grid size={{ xs: 4, align: "center" }} key={recipe.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4, align: "center"}} key={recipe.id}>
             <RecipeCard recipe={recipe}/>
           </Grid>
         ))}
+        </Grid>
       </Container>
     </ThemeProvider>
   );
